@@ -1,0 +1,6 @@
+* Huang Ying's Common Lisp Library
+
+Collect utilities that are typically in the standard library of other
+languages, such as python and ruby, etc.
+
+Use the existing library as much as possible.
