@@ -110,6 +110,12 @@
 	   #:ensure-all-directories-exist
 	   #:rename-file-overwriting-target
 	   #:concatenate-files
+	   ;;; file system
+	   #:map-pathname-pattern
+	   #:list-pathname-pattern
+	   #:*path-wild*
+	   #:*path-wild-hidden*
+	   #:*path-wild-all*
 	   ;;; temporary file from cl-fad
            #:open-temporary
            #:with-output-to-temporary-file
