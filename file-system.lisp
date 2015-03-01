@@ -24,11 +24,9 @@
 			 (rec new-base remaining)
 			 (if (fod-exists-p new-base)
 			     (funcall thunk new-base))))
-		   (let ((pattern (cond
-				    ((typep component 'function) component)
-				    ((and (listp component) (eq :re (car component)))
-				     (create-scanner (cadr component)))
-				    (t (create-scanner component)))))
+		   (let ((pattern (if (typep component 'function)
+				      component
+				      (create-scanner component))))
 		     (iter (for fod :in (list-directory base :follow-symlinks nil))
 			   (if (scan pattern (pathname-last-component fod))
 			       (if remaining
