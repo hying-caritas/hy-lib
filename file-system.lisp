@@ -1,5 +1,9 @@
 (in-package :hy-lib)
 
+(defparameter *path-wild* (create-scanner '(:sequence :start-anchor (:inverted-char-class #\.))))
+(defparameter *path-wild-hidden* (create-scanner '(:sequence :start-anchor #\.)))
+(defparameter *path-wild-all* (create-scanner :everything))
+
 (defun pathname-last-component (pathname)
   (if (directory-pathname-p pathname)
       (lastcar (pathname-directory pathname))
